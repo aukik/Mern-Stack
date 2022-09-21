@@ -5,7 +5,7 @@ const getPosts = async (req, res) => {
     console.log(postMessages)
     res.status(200).json(postMessages)
   } catch (error) {
-    res.send(error)
+    res.status(404).json({ message: error.message })
   }
 }
 const createPost = (req, res) => {
